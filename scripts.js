@@ -14,6 +14,7 @@ function setMinuteHand(minutes) {
 
 function setHourHand(hours) {
 	var position = (((hours % 12) / 12) * 360) + 90;
+	console.log(position);
 	hourHand.style.transform = `rotate(${ position }deg)`;
 };
 
@@ -22,7 +23,7 @@ function setInitialTime() {
 
 	setSecondHand(now.getSeconds());
 	setMinuteHand(now.getMinutes());
-	setHourHand(now.getMinutes());
+	setHourHand(now.getHours());
 };
 
 function setTime() {
