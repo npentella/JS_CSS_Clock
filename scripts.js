@@ -5,14 +5,17 @@ const hourHand = document.querySelector(".hour-hand");
 function setSecondHand(seconds) {
 	var position = ((seconds / 60) * 360) + 90;
 	secondHand.style.transform = `rotate(${ position }deg)`;
-	return seconds;
 };
 
 function setMinuteHand(minutes) {
 	var position = ((minutes / 60) * 360) + 90;
-	console.log(minuteHand);
 	minuteHand.style.transform = `rotate(${ position }deg)`;
-}
+};
+
+function setHourHand(hours) {
+	var position = (((hours % 12) / 12) * 360) + 90;
+	hourHand.style.transform = `rotate(${ position }deg)`;
+};
 
 function setTime() {
 	var now = new Date();
@@ -20,6 +23,9 @@ function setTime() {
 	setSecondHand(now.getSeconds());
 	if(!now.getSeconds()) {
 		setMinuteHand(now.getMinutes());
+		if (!now.getMinutes()) {
+			setHourHand(now.getHours());
+		};
 	};
 }
 
