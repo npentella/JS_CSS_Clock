@@ -2,9 +2,19 @@ const secondHand = document.querySelector(".second-hand");
 const minuteHand = document.querySelector(".minute-hand");
 const hourHand = document.querySelector(".hour-hand");
 
-function setDate() {
+function setSecondHand(seconds) {
+	var position = ((seconds / 60) * 360) + 90;
+	secondHand.style.transform = `rotate(${ position }deg)`;
+	return seconds;
+};
+
+function setTime() {
 	var now = new Date();
-	console.log(now.getSeconds());
+
+	setSecondHand(now.getSeconds());
+	if(!now.getSeconds()) {
+		
+	};
 }
 
-setInterval(setDate, 1000);
+setInterval(setTime, 1000);
