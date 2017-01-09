@@ -17,6 +17,14 @@ function setHourHand(hours) {
 	hourHand.style.transform = `rotate(${ position }deg)`;
 };
 
+function setInitialTime() {
+	var now = new Date();
+
+	setSecondHand(now.getSeconds());
+	setMinuteHand(now.getMinutes());
+	setHourHand(now.getMinutes());
+};
+
 function setTime() {
 	var now = new Date();
 
@@ -28,5 +36,7 @@ function setTime() {
 		};
 	};
 }
+
+setInitialTime();
 
 setInterval(setTime, 1000);
