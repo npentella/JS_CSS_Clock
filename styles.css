@@ -38,10 +38,22 @@ body {
 
 .hand {
   width:50%;
-  height:6px;
+  height:2px;
   background:black;
   position: absolute;
   top:50%;
   transform: rotate(90deg);
   transform-origin: 100%;
+}
+
+.min-hand {
+  width: 40%;
+  height: 4px;
+  right: 50%;
+}
+
+.hour-hand {
+  width: 30%;
+  height: 6px;
+  right: 50%;
 }
